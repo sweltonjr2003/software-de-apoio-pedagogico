@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { ref, onBeforeMount, onBeforeUnmount } from 'vue'
+import { ref, onBeforeMount } from 'vue'
 
 const items = ref([
     {
