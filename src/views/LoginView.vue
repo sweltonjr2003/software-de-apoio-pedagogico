@@ -12,7 +12,7 @@
                 <form>
                     <InputText id="numeroSiga" placeholder="Numero do SIGA" />
 
-                    <Button label="Entrar" />
+                    <Button label="Entrar" @click="$router.push('/')" />
                 </form>
             </template>
         </Card>
