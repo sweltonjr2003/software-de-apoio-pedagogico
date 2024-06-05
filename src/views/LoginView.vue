@@ -1,3 +1,10 @@
+<script setup lang="ts">
+function login() {
+    localStorage.setItem('authorizated', 'true')
+    window.location.href = '/'
+}
+</script>
+
 <template>
     <div class="wrapper">
         <Card>
@@ -12,7 +19,7 @@
                 <form>
                     <InputText id="numeroSiga" placeholder="Numero do SIGA" />
 
-                    <Button label="Entrar" @click="$router.push('/')" />
+                    <Button label="Entrar" @click="login" />
                 </form>
             </template>
         </Card>

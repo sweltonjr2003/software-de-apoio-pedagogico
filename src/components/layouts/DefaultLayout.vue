@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { ref } from 'vue'
+import { ref, onBeforeMount, onBeforeUnmount } from 'vue'
 
 const items = ref([
     {
@@ -11,6 +11,14 @@ const items = ref([
         to: '/feed',
     },
 ])
+
+onBeforeMount(() => {
+    if (!localStorage.getItem('authorizated')) {
+        window.location.href = '/#/login'
+    }
+})
+
+onBeforeMount(() => localStorage.removeItem('authorizated'))
 </script>
 
 <template>
