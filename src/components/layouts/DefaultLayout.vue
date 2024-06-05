@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { ref, onBeforeMount } from 'vue'
+import { ref, onBeforeMount, onBeforeUnmount } from 'vue'
 
 const items = ref([
     {
@@ -18,7 +18,9 @@ onBeforeMount(() => {
     }
 })
 
-onBeforeMount(() => localStorage.removeItem('authorizated'))
+onBeforeUnmount(() => {
+    localStorage.removeItem('authorizated')
+})
 </script>
 
 <template>
